@@ -1,8 +1,8 @@
 # Respostas Conceituais - Git, GitHub e GitFlow
 
-Repositorio publico: https://github.com/Ctrshift-Pm/lanchonete-web
+Repositório público: https://github.com/Ctrshift-Pm/lanchonete-web
 
-## Questao 1 - Inicializando o repositorio
+## Questão 1 - Inicializando o repositório
 
 Comandos executados:
 
@@ -13,18 +13,18 @@ git init
 git branch -M main
 ```
 
-Saida principal:
+Saída principal:
 
 ```text
 Initialized empty Git repository in D:/zero-qualidade-gits/lanchonete-web/.git/
 ## No commits yet on main
 ```
 
-O status `Untracked files` significa que os arquivos existem na pasta, mas ainda nao sao controlados pelo Git. Eles ainda nao entraram na Staging Area e nao fazem parte de nenhum commit.
+O status `Untracked files` significa que os arquivos existem na pasta, mas ainda não são controlados pelo Git. Eles ainda não entraram na Staging Area e não fazem parte de nenhum commit.
 
-## Questao 2 - Primeiro commit
+## Questão 2 - Primeiro commit
 
-Apos `git add README.md`, o arquivo `README.md` passou de `??` para `A`, indicando que estava preparado na Staging Area. Os outros arquivos continuaram como untracked.
+Após `git add README.md`, o arquivo `README.md` passou de `??` para `A`, indicando que estava preparado na Staging Area. Os outros arquivos continuaram como untracked.
 
 Depois foi executado:
 
@@ -40,15 +40,15 @@ Commit inicial:
 e447017 feat: estrutura inicial do projeto
 ```
 
-O `git log --oneline` mostra o historico de commits em formato resumido, com hash curto e mensagem de cada commit.
+O `git log --oneline` mostra o histórico de commits em formato resumido, com hash curto e mensagem de cada commit.
 
-## Questao 3 - Modificando e rastreando arquivos
+## Questão 3 - Modificando e rastreando arquivos
 
-O `index.html` recebeu a estrutura HTML basica com o titulo `Lanchonete do Bairro`.
+O `index.html` recebeu a estrutura HTML básica com o título `Lanchonete do Bairro`.
 
-Um arquivo `Untracked` ainda nao esta sendo monitorado pelo Git. Um arquivo `Modified` ja pertence ao historico do Git, mas foi alterado depois do ultimo commit.
+Um arquivo `Untracked` ainda não está sendo monitorado pelo Git. Um arquivo `Modified` já pertence ao histórico do Git, mas foi alterado depois do último commit.
 
-O `git diff` antes do `git add` mostrou as linhas adicionadas ao `index.html`, incluindo `DOCTYPE`, `html`, `head`, `title`, `nav`, secoes do cardapio e rodape.
+O `git diff` antes do `git add` mostrou as linhas adicionadas ao `index.html`, incluindo `DOCTYPE`, `html`, `head`, `title`, `nav`, seções do cardápio e rodapé.
 
 Commit realizado:
 
@@ -56,9 +56,9 @@ Commit realizado:
 248c150 feat: adiciona estrutura basica do HTML
 ```
 
-## Questao 4 - Historico de versoes
+## Questão 4 - Histórico de versões
 
-Foram feitas mais duas alteracoes em arquivos diferentes:
+Foram feitas mais duas alterações em arquivos diferentes:
 
 ```text
 9755c08 style: adiciona estilos iniciais
@@ -74,11 +74,11 @@ Trecho do `git log` completo:
 e447017405d473babd7d695b322459ed31a139cf | Ctrshift-Pm | 2026-06-14T23:13:46-03:00 | feat: estrutura inicial do projeto
 ```
 
-No `git log --oneline --graph`, o simbolo `*` representa um commit no historico. Quando ha branches e merges, esses simbolos ajudam a visualizar os caminhos do desenvolvimento.
+No `git log --oneline --graph`, o símbolo `*` representa um commit no histórico. Quando há branches e merges, esses símbolos ajudam a visualizar os caminhos do desenvolvimento.
 
-Mensagens claras de commit ajudam a entender o motivo das mudancas, facilitam revisao de codigo, auditoria, manutencao e investigacao de problemas.
+Mensagens claras de commit ajudam a entender o motivo das mudanças, facilitam revisão de código, auditoria, manutenção e investigação de problemas.
 
-## Questao 5 - Branch de promocoes
+## Questão 5 - Branch de promoções
 
 Comando usado:
 
@@ -92,9 +92,9 @@ Foi criado o arquivo `promocoes.html` e realizado o commit:
 80ac119 feat: adiciona pagina de promocoes
 ```
 
-No `git branch`, o asterisco `*` indica a branch atual. Ao voltar para `main` antes do merge, o arquivo `promocoes.html` nao aparecia, porque ele existia apenas na branch `feature/pagina-promocoes`.
+No `git branch`, o asterisco `*` indica a branch atual. Ao voltar para `main` antes do merge, o arquivo `promocoes.html` não aparecia, porque ele existia apenas na branch `feature/pagina-promocoes`.
 
-## Questao 6 - Merge da branch de promocoes
+## Questão 6 - Merge da branch de promoções
 
 Comando usado em `main`:
 
@@ -102,7 +102,7 @@ Comando usado em `main`:
 git merge feature/pagina-promocoes
 ```
 
-Saida principal:
+Saída principal:
 
 ```text
 Updating 28b5a50..80ac119
@@ -110,17 +110,17 @@ Fast-forward
 promocoes.html | 67 insertions(+)
 ```
 
-A estrategia usada foi `Fast-forward`. Isso aconteceu porque `main` nao tinha novos commits depois da criacao da branch de feature, entao o Git apenas avancou o ponteiro de `main`.
+A estratégia usada foi `Fast-forward`. Isso aconteceu porque `main` não tinha novos commits depois da criação da branch de feature, então o Git apenas avançou o ponteiro de `main`.
 
-Apos o merge, o historico passou a incluir o commit da pagina de promocoes na linha principal. A branch foi deletada com:
+Após o merge, o histórico passou a incluir o commit da página de promoções na linha principal. A branch foi deletada com:
 
 ```bash
 git branch -d feature/pagina-promocoes
 ```
 
-Deletar branches concluidas evita acumulacao de referencias antigas e deixa o repositorio mais organizado.
+Deletar branches concluídas evita acumulação de referências antigas e deixa o repositório mais organizado.
 
-## Questao 7 - Desfazendo erros com revert
+## Questão 7 - Desfazendo erros com revert
 
 Foi criado um commit propositalmente errado:
 
@@ -134,17 +134,17 @@ Depois foi executado:
 git revert 7c53da3
 ```
 
-Commit de reversao:
+Commit de reversão:
 
 ```text
 d64e5be Revert "style: adiciona cor de fundo incorreta"
 ```
 
-`git revert` cria um novo commit que desfaz a alteracao anterior, preservando o historico. `git reset` move o ponteiro da branch e pode remover commits do historico local. Em projetos colaborativos, `revert` e mais seguro porque nao reescreve commits que outras pessoas podem ja ter baixado.
+`git revert` cria um novo commit que desfaz a alteração anterior, preservando o histórico. `git reset` move o ponteiro da branch e pode remover commits do histórico local. Em projetos colaborativos, `revert` é mais seguro porque não reescreve commits que outras pessoas podem já ter baixado.
 
-## Questao 8 - Repositorio remoto com GitHub
+## Questão 8 - Repositório remoto com GitHub
 
-Repositorio criado:
+Repositório criado:
 
 ```text
 https://github.com/Ctrshift-Pm/lanchonete-web
@@ -159,7 +159,7 @@ git push -u origin main
 
 A flag `-u` cria o relacionamento de upstream entre a branch local e a branch remota. Depois disso, `git push` e `git pull` podem ser usados sem informar branch e remoto.
 
-Foi feita uma alteracao remota no `README.md` pelo GitHub, gerando o commit:
+Foi feita uma alteração remota no `README.md` pelo GitHub, gerando o commit:
 
 ```text
 bffd193 docs: atualiza README pelo GitHub
@@ -167,7 +167,7 @@ bffd193 docs: atualiza README pelo GitHub
 
 O `git pull` baixou esse commit remoto e atualizou a branch local por fast-forward.
 
-## Questao 9 - Inicializando GitFlow
+## Questão 9 - Inicializando GitFlow
 
 Foi usado GitFlow AVH. O comando executado foi:
 
@@ -175,7 +175,7 @@ Foi usado GitFlow AVH. O comando executado foi:
 git flow init -d
 ```
 
-Saida principal:
+Saída principal:
 
 ```text
 Branch name for production releases: [main]
@@ -194,7 +194,7 @@ develop
 main
 ```
 
-A branch criada alem da `main` foi `develop`. Ela serve como linha principal de desenvolvimento, onde features sao integradas antes de virar release de producao.
+A branch criada além da `main` foi `develop`. Ela serve como linha principal de desenvolvimento, onde features são integradas antes de virar release de produção.
 
 Push realizado:
 
@@ -202,7 +202,7 @@ Push realizado:
 git push -u origin develop
 ```
 
-## Questao 10 - Feature cardapio interativo
+## Questão 10 - Feature cardápio interativo
 
 Comando usado:
 
@@ -239,7 +239,7 @@ Merge gerado:
 
 Fluxo: `develop` criou `feature/cardapio-interativo`; a feature recebeu dois commits; ao finalizar, ela foi mesclada de volta em `develop`.
 
-## Questao 11 - Release 1.0.0
+## Questão 11 - Release 1.0.0
 
 Comando usado:
 
@@ -271,9 +271,9 @@ tag: 1.0.0
 
 Ao finalizar a release, o GitFlow mesclou a release em `main`, criou a tag `1.0.0`, mesclou a tag de volta em `develop` e removeu a branch `release/1.0.0`.
 
-A tag marca um ponto exato do historico, representando uma versao publicada do sistema.
+A tag marca um ponto exato do histórico, representando uma versão publicada do sistema.
 
-## Questao 12 - Hotfix em producao
+## Questão 12 - Hotfix em produção
 
 Comando usado:
 
@@ -281,7 +281,7 @@ Comando usado:
 git flow hotfix start correcao-titulo
 ```
 
-O hotfix nasce de `main` porque representa uma correcao urgente da versao que esta em producao. A branch `develop` pode conter mudancas ainda nao publicadas, por isso nao deve ser a base de uma correcao imediata de producao.
+O hotfix nasce de `main` porque representa uma correção urgente da versão que está em produção. A branch `develop` pode conter mudanças ainda não publicadas, por isso não deve ser a base de uma correção imediata de produção.
 
 Commit do hotfix:
 
@@ -303,11 +303,11 @@ de721a8 Merge tag '1.0.1' into develop
 tag: 1.0.1
 ```
 
-O hotfix foi mesclado em `main` e tambem em `develop`, garantindo que a correcao esteja tanto em producao quanto na linha de desenvolvimento.
+O hotfix foi mesclado em `main` e também em `develop`, garantindo que a correção esteja tanto em produção quanto na linha de desenvolvimento.
 
-Seguindo SemVer, o numero correto apos esse hotfix e `1.0.1`, porque foi uma correcao de bug sem nova funcionalidade e sem quebra de compatibilidade. A rubrica menciona `1.1.1 ou superior`, mas, conceitualmente, para um bug fix apos `1.0.0`, o incremento correto e no patch: `1.0.1`.
+Seguindo SemVer, o número correto após esse hotfix é `1.0.1`, porque foi uma correção de bug sem nova funcionalidade e sem quebra de compatibilidade. A rubrica menciona `1.1.1 ou superior`, mas, conceitualmente, para um bug fix após `1.0.0`, o incremento correto é no patch: `1.0.1`.
 
-## Questao 13 - Reflexao final
+## Questão 13 - Reflexão final
 
 Diagrama textual do fluxo:
 
@@ -321,11 +321,11 @@ release/1.0.0:                         79ebc16
 hotfix/correcao-titulo:                                      6cae939
 ```
 
-O GitFlow e mais indicado em projetos com versoes planejadas, ambientes separados, manutencao de releases e necessidade de hotfix em producao. Ele pode ser complexo demais para projetos pequenos, trabalhos individuais, prototipos ou sites simples sem ciclo formal de release.
+O GitFlow é mais indicado em projetos com versões planejadas, ambientes separados, manutenção de releases e necessidade de hotfix em produção. Ele pode ser complexo demais para projetos pequenos, trabalhos individuais, protótipos ou sites simples sem ciclo formal de release.
 
-Comparando os exercicios 1 a 8 com os exercicios 9 a 13: sem GitFlow, o historico e mais simples e direto; com GitFlow, o historico fica mais organizado por tipo de trabalho. Uma vantagem do GitFlow e separar desenvolvimento, release e hotfix. Uma desvantagem e o aumento de comandos, merges e branches para gerenciar.
+Comparando os exercícios 1 a 8 com os exercícios 9 a 13: sem GitFlow, o histórico é mais simples e direto; com GitFlow, o histórico fica mais organizado por tipo de trabalho. Uma vantagem do GitFlow é separar desenvolvimento, release e hotfix. Uma desvantagem é o aumento de comandos, merges e branches para gerenciar.
 
-## Verificacoes finais
+## Verificações finais
 
 Branches principais:
 
@@ -341,7 +341,7 @@ Tags criadas:
 1.0.1
 ```
 
-Historico resumido:
+Histórico resumido:
 
 ```text
 de721a8 Merge tag '1.0.1' into develop
